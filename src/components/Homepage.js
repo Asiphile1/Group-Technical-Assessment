@@ -24,6 +24,7 @@ const Homepage = () => {
         backgroundImage: 'url(https://trello.com/1/cards/6786259a470356581cf02daa/attachments/67862798ba052a83bc51773f/download/wallpaper.jfif)',
         backgroundSize: 'cover',
         backgroundPosition: 'center',
+        backgroundRepeat: 'no-repeat',
         height: '100vh',
         display: 'flex',
         flexDirection: 'column',
