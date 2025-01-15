@@ -5,12 +5,7 @@ import LoginScreen from "./components/pages/LoginScreen";
 import WeatherScreen from "./components/pages/WeatherScreen";
 import ActivitiesScreen from "./components/pages/ActivitiesScreen";
 import Destiny from "./components/Destiny"; // Import the Destiny component
-import Favourites from "./components/Favourites"; // Import the Favourites component
-import { config } from 'dotenv'; // Import dotenv
-import path from 'path'; // Import path
-
-// Load environment variables from home.env
-config({ path: path.resolve(__dirname, '../home.env') });
+import Favourites from "./components/Favourites";
 
 const App = () => {
   return (
