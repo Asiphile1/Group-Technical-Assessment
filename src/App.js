@@ -4,7 +4,8 @@ import Homepage from "./components/Homepage";
 import LoginScreen from "./components/pages/LoginScreen";
 import WeatherScreen from "./components/pages/WeatherScreen";
 import ActivitiesScreen from "./components/pages/ActivitiesScreen";
-import Destiny from "./components/Destiny"; // Import the Destiny component
+import Destiny from "./components/Destiny";
+import Favourites from "./components/Favourites";
 
 const App = () => {
   return (
@@ -12,6 +13,7 @@ const App = () => {
       <Routes>
         <Route path="/" element={<Homepage />} />
         <Route path="/login" element={<LoginScreen />} />
+        <Route path="/favourites" element={<Favourites />} />
         <Route path="/weather" element={<WeatherScreen />} />
         <Route path="/activities" element={<ActivitiesScreen />} />
         <Route path="/destiny" element={<Destiny />} /> {/* Add the Destiny route */}
