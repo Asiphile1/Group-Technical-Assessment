@@ -117,4 +117,14 @@ const Destiny = () => {
   );
 };
 
+<<<<<<< HEAD
 export default Destiny;
+=======
+export default Destiny;
+
+
+
+
+
+
+>>>>>>> 8ad143ef20d36e7939899ce2d760cc7c393bdde4
