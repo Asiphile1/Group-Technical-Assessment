@@ -123,7 +123,7 @@ Build a functional application that integrates APIs to address a real-world prob
 
 ## **Collaboration Tools:**
 - **Version Control:** GitHub
-- **Task Management:** Trello (Shared board for team collaboration) 
+- **Task Management:** Trello (Shared board for team collaboration) https://trello.com/b/tg7Kp8Wa/group-weather-app
 
 ---
 
