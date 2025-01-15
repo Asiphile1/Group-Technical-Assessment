@@ -4,15 +4,18 @@ import { Container, Typography, TextField, Button, Box } from "@mui/material";
 const LoginScreen = () => {
   return (
     <Container
-      maxWidth="sm"
+      maxWidth={false} // Allows the container to span the full width
       sx={{
         display: "flex",
         flexDirection: "column",
         alignItems: "center",
         justifyContent: "center",
-        height: "100vh",
+        height: "100vh", // Full viewport height
+        width: "100%", // Full viewport width
         backgroundColor: "black", // Black background
         color: "white", // White text
+        margin: 0,
+        padding: 0,
       }}
     >
       <Typography variant="h4" gutterBottom>
