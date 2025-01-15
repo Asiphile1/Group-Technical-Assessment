@@ -10,12 +10,14 @@ import {
   IconButton,
 } from "@mui/material";
 import ArrowBackIcon from "@mui/icons-material/ArrowBack";
-import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 import WbSunnyIcon from "@mui/icons-material/WbSunny";
 import InvertColorsIcon from "@mui/icons-material/InvertColors";
 import AirIcon from "@mui/icons-material/Air";
+import { useNavigate } from "react-router-dom"; // Import useNavigate
 
 const WeatherScreen = () => {
+  const navigate = useNavigate(); // Initialize the navigation hook
+
   // Dummy data for current weather
   const currentWeather = {
     city: "New York",
@@ -30,11 +32,21 @@ const WeatherScreen = () => {
     currentDay: 2, // Index of the current day (0 for Monday, etc.)
   };
 
+  // Handle back navigation
+  const handleBack = () => {
+    navigate("/"); // Navigate to the Homepage
+  };
+
+  // Handle activities navigation
+  const handleActivities = () => {
+    navigate("/activities"); // Navigate to the ActivitiesScreen
+  };
+
   return (
     <Container
       maxWidth={false}
       sx={{
-        backgroundImage: "url(/assets/weather-background.jpg)", 
+        backgroundImage: "url(/assets/weather-background.jpg)",
         backgroundSize: "cover",
         backgroundPosition: "center",
         height: "100vh",
@@ -52,12 +64,10 @@ const WeatherScreen = () => {
           background: "rgba(0, 0, 0, 0.5)",
           boxShadow: "none",
           padding: "50px",
-         
-          
         }}
       >
         <Toolbar sx={{ justifyContent: "space-between" }}>
-          <IconButton sx={{ color: "white" }}>
+          <IconButton sx={{ color: "white" }} onClick={handleBack}>
             <ArrowBackIcon />
           </IconButton>
           <Box sx={{ textAlign: "center" }}>
@@ -77,6 +87,7 @@ const WeatherScreen = () => {
                   backgroundColor: "#9ACD32",
                 },
               }}
+              onClick={handleActivities}
             >
               Activities
             </Button>
@@ -95,7 +106,7 @@ const WeatherScreen = () => {
           padding: "20px",
           background: "rgba(0, 0, 0, 0.5)",
           boxShadow: "none",
-          height: "60%"
+          height: "60%",
         }}
       >
         <WbSunnyIcon sx={{ fontSize: "60px", color: "orange" }} />
@@ -112,9 +123,7 @@ const WeatherScreen = () => {
           <Grid item>
             <Box>
               <AirIcon />
-              <Typography variant="body2">
-                {currentWeather.windSpeed}
-              </Typography>
+              <Typography variant="body2">{currentWeather.windSpeed}</Typography>
             </Box>
           </Grid>
         </Grid>
@@ -154,6 +163,7 @@ const WeatherScreen = () => {
                   />
                   <Typography
                     variant="body2"
+                    align="center"
                     sx={{
                       color:
                         index === currentWeather.currentDay
@@ -168,7 +178,7 @@ const WeatherScreen = () => {
             </Grid>
           </Box>
           <IconButton sx={{ color: "white" }}>
-            <ArrowForwardIcon />
+            <ArrowBackIcon />
           </IconButton>
         </Box>
       </Box>
