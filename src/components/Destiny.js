@@ -12,7 +12,8 @@ import {
 } from '@mui/material';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import WbSunnyIcon from '@mui/icons-material/WbSunny';
-import { GoogleMap, LoadScript, Marker } from '@react-google-maps/api';
+import ReactMapGL, { Marker } from 'react-map-gl';
+import 'mapbox-gl/dist/mapbox-gl.css'; // Import Mapbox GL CSS
 import './Destiny.css'; // Ensure this path is correct
 
 const Destiny = () => {
@@ -22,10 +23,13 @@ const Destiny = () => {
     borderRadius: "8px",
   };
 
-  const center = {
-    lat: 40.7128, // Latitude for New York
-    lng: -74.0060, // Longitude for New York
-  };
+  const [viewport, setViewport] = React.useState({
+    latitude: 40.7128, // Latitude for New York
+    longitude: -74.0060, // Longitude for New York
+    zoom: 12,
+    width: '100%',
+    height: '300px',
+  });
 
   return (
     <Container
@@ -91,15 +95,16 @@ const Destiny = () => {
 
         <Box sx={{ mt: 4 }}>
           <Typography variant="h6">Map</Typography>
-          <LoadScript googleMapsApiKey="YOUR_API_KEY"> {/* Replace with Google Maps API key */}
-            <GoogleMap
-              mapContainerStyle={mapContainerStyle}
-              center={center}
-              zoom={12}
-            >
-              <Marker position={center} />
-            </GoogleMap>
-          </LoadScript>
+          <ReactMapGL
+            {...viewport}
+            mapStyle="mapbox://styles/mapbox/streets-v11" // Mapbox style URL
+            onViewportChange={setViewport}
+            mapboxApiAccessToken={process.env.REACT_APP_MAPBOX_ACCESS_TOKEN} // Access token from .env
+          >
+            <Marker latitude={40.7128} longitude={-74.0060}>
+              <div style={{ color: 'red', fontSize: '24px' }}>📍</div>
+            </Marker>
+          </ReactMapGL>
         </Box>
       </Box>
     </Container>
