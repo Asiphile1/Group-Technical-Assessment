@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 import {
   AppBar,
   Toolbar,
@@ -9,11 +9,11 @@ import {
   CardMedia,
   Box,
   IconButton,
-} from '@mui/material';
-import ArrowBackIcon from '@mui/icons-material/ArrowBack';
-import WbSunnyIcon from '@mui/icons-material/WbSunny';
-import { GoogleMap, LoadScript, Marker } from '@react-google-maps/api';
-import './Destiny.css'; // Ensure this path is correct
+} from "@mui/material";
+import ArrowBackIcon from "@mui/icons-material/ArrowBack";
+import WbSunnyIcon from "@mui/icons-material/WbSunny";
+import { GoogleMap, LoadScript, Marker } from "@react-google-maps/api";
+import "./Destiny.css"; // Ensure this path is correct
 
 const Destiny = () => {
   const mapContainerStyle = {
@@ -24,7 +24,7 @@ const Destiny = () => {
 
   const center = {
     lat: 40.7128, // Latitude for New York
-    lng: -74.0060, // Longitude for New York
+    lng: -74.006, // Longitude for New York
   };
 
   return (
@@ -32,13 +32,13 @@ const Destiny = () => {
       component="main"
       maxWidth="lg"
       sx={{
-        backgroundColor: '#1c1c1c',
-        color: 'white',
-        padding: '20px',
-        borderRadius: '8px',
+        backgroundColor: "#1c1c1c",
+        color: "white",
+        padding: "20px",
+        borderRadius: "8px",
       }}
     >
-      <AppBar position="static" sx={{ background: 'black', boxShadow: 'none' }}>
+      <AppBar position="static" sx={{ background: "black", boxShadow: "none" }}>
         <Toolbar>
           <IconButton edge="start" color="inherit" aria-label="back">
             <ArrowBackIcon />
@@ -47,7 +47,7 @@ const Destiny = () => {
             New York USA
           </Typography>
           <Typography variant="h6">26 °C</Typography>
-          <WbSunnyIcon sx={{ color: 'yellow', marginLeft: '10px' }} />
+          <WbSunnyIcon sx={{ color: "yellow", marginLeft: "10px" }} />
         </Toolbar>
       </AppBar>
 
@@ -79,19 +79,30 @@ const Destiny = () => {
         <Box sx={{ mt: 2 }}>
           <Typography variant="body1">Eyeseeing</Typography>
           <Typography variant="body2">
-            <span role="img" aria-label="clock">🕒</span> Mon - Sat: 08:00 - 19:00
+            <span role="img" aria-label="clock">
+              🕒
+            </span>{" "}
+            Mon - Sat: 08:00 - 19:00
           </Typography>
           <Typography variant="body2">
-            <span role="img" aria-label="age">👶</span> Children under the age of 3 not allowed
+            <span role="img" aria-label="age">
+              👶
+            </span>{" "}
+            Children under the age of 3 not allowed
           </Typography>
           <Typography variant="body2">
-            <span role="img" aria-label="bottle">🚫</span> Bottles not allowed, bring only cans
+            <span role="img" aria-label="bottle">
+              🚫
+            </span>{" "}
+            Bottles not allowed, bring only cans
           </Typography>
         </Box>
 
         <Box sx={{ mt: 4 }}>
           <Typography variant="h6">Map</Typography>
-          <LoadScript googleMapsApiKey="YOUR_API_KEY"> {/* Replace with Google Maps API key */}
+          <LoadScript googleMapsApiKey="YOUR_API_KEY">
+            {" "}
+            {/* Replace with Google Maps API key */}
             <GoogleMap
               mapContainerStyle={mapContainerStyle}
               center={center}

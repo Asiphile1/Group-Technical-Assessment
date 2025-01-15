@@ -12,7 +12,7 @@ import {
 } from "@mui/material";
 import ArrowBackIcon from "@mui/icons-material/ArrowBack";
 import WbSunnyIcon from "@mui/icons-material/WbSunny";
-// import "./ActivitiesScreen.css"; 
+// import "./ActivitiesScreen.css";
 
 const ActivitiesScreen = () => {
   const activities = [
