@@ -14,7 +14,7 @@ import {
   InputAdornment,
   IconButton,
 } from '@mui/material';
-import './Homepage.css'; // Ensure this path is correct
+import './Homepage.css'; // Import the CSS file
 
 const Homepage = () => {
   // Array of recent locations with their respective details
@@ -60,24 +60,27 @@ const Homepage = () => {
   return (
     <Container
       component="main"
-      maxWidth="lg"
+      maxWidth={false} // Ensure the container takes full width
       sx={{
         backgroundImage: 'url(https://trello.com/1/cards/6786259a470356581cf02daa/attachments/67862798ba052a83bc51773f/download/wallpaper.jfif)',
         backgroundSize: 'cover',
         backgroundPosition: 'center',
         backgroundRepeat: 'no-repeat',
-        height: '100vh',
+        height: '100vh', // Ensure the container takes full viewport height
         display: 'flex',
         flexDirection: 'column',
         justifyContent: 'center',
         color: 'white',
         border: '5px solid #00BFFF', // Blue border
+        padding: 0, // Remove default padding
+        margin: 0, // Remove default margin
       }}
     >
       <CssBaseline />
       <AppBar position="static" sx={{ background: 'rgba(0, 0, 0, 0.5)' }}>
         <Toolbar>
-          <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
+          <Typography variant="h6" component="div" sx={{ flexGrow: 1, display: 'flex', alignItems: 'center' }}>
+            <span role="img" aria-label="car" className="header-car-icon">🚗</span>
             We’ve got you for your next vacation
           </Typography>
           <IconButton onClick={handleHamburgerClick} sx={{ color: 'white' }}>
@@ -94,7 +97,10 @@ const Homepage = () => {
                 sx={{
                   background: selectedCard === index ? 'rgba(0, 191, 255, 0.5)' : 'rgba(0, 0, 0, 0.5)',
                   cursor: 'pointer',
-                  transition: 'background 0.3s ease',
+                  transition: 'background 0.3s ease, transform 0.3s ease',
+                  '&:hover': {
+                    transform: 'scale(1.05)', // Scale up on hover
+                  },
                 }}
                 onClick={() => handleCardClick(index)}
               >
@@ -103,12 +109,15 @@ const Homepage = () => {
                   height="200"
                   image={location.image} // Use the image URL from the array
                   alt={location.name}
+                  className="card-media"
                 />
                 <CardContent>
                   <Typography variant="h6">
-                    <span role="img" aria-label="location">📍</span> {location.name}
+                    <span role="img" aria-label="location" className="location-icon">📍</span> {location.name}
                   </Typography>
-                  <Typography variant="body2">{location.date}</Typography>
+                  <Typography variant="body2">
+                    <span role="img" aria-label="calendar" className="calendar-icon">📅</span> {location.date}
+                  </Typography>
                 </CardContent>
               </Card>
             </Grid>
@@ -124,7 +133,7 @@ const Homepage = () => {
               endAdornment: (
                 <InputAdornment position="end">
                   <IconButton onClick={handleSearch}>
-                    <Typography variant="h6">🔍</Typography>
+                    <Typography variant="h6" className="search-icon">🔍</Typography>
                   </IconButton>
                 </InputAdornment>
               ),
