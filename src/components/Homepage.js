@@ -13,7 +13,10 @@ import {
   CssBaseline,
   InputAdornment,
   IconButton,
+  Menu,
+  MenuItem,
 } from '@mui/material';
+import { Link } from 'react-router-dom'; // Import Link for navigation
 import './Homepage.css'; // Import the CSS file
 
 const Homepage = () => {
@@ -39,6 +42,10 @@ const Homepage = () => {
   // State to track the selected card
   const [selectedCard, setSelectedCard] = useState(null);
 
+  // State for hamburger menu
+  const [anchorEl, setAnchorEl] = useState(null);
+  const open = Boolean(anchorEl);
+
   // Handle card click
   const handleCardClick = (index) => {
     setSelectedCard(index === selectedCard ? null : index); // Toggle selection
@@ -52,9 +59,13 @@ const Homepage = () => {
   };
 
   // Handle hamburger menu click
-  const handleHamburgerClick = () => {
-    console.log('Hamburger menu clicked');
-    // Add your hamburger menu logic here
+  const handleHamburgerClick = (event) => {
+    setAnchorEl(event.currentTarget); // Open the menu
+  };
+
+  // Handle menu close
+  const handleMenuClose = () => {
+    setAnchorEl(null); // Close the menu
   };
 
   return (
@@ -86,6 +97,19 @@ const Homepage = () => {
           <IconButton onClick={handleHamburgerClick} sx={{ color: 'white' }}>
             <Typography variant="h6">☰</Typography>
           </IconButton>
+          {/* Hamburger Menu */}
+          <Menu
+            anchorEl={anchorEl}
+            open={open}
+            onClose={handleMenuClose}
+          >
+            <MenuItem onClick={handleMenuClose} component={Link} to="/login">
+              Login
+            </MenuItem>
+            <MenuItem onClick={handleMenuClose} component={Link} to="/favourites">
+              Favourites
+            </MenuItem>
+          </Menu>
         </Toolbar>
       </AppBar>
       <Box sx={{ textAlign: 'center', mt: 4 }}>
