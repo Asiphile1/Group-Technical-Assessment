@@ -1,3 +1,4 @@
+
 import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Homepage from "./components/Homepage";
@@ -15,6 +16,17 @@ const App = () => {
         <Route path="/activities" element={<ActivitiesScreen />} />
       </Routes>
     </Router>
+import React from 'react';
+import Homepage from './components/Homepage';
+import Destiny from './components/Destiny'; // Import the new Destiny component
+
+const App = () => {
+  return (
+    <div>
+      <Homepage />
+      <Destiny /> {/* Add the Destiny component here */}
+    </div>
+
   );
 };
 

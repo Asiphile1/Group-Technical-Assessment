@@ -1,10 +1,76 @@
-body {
+/* General styles */
+body, html {
   margin: 0;
-  font-family: Arial, sans-serif;
+  padding: 0;
+  height: 100%;
+  overflow: hidden; /* Prevent scrolling */
 }
 
-footer {
-  margin-top: 20px;
-  text-align: center;
-  color: white;
+/* Header styles */
+.header-car-icon {
+  color: black; /* Black car icon */
+  margin-right: 10px;
+}
+
+/* Location icon styles */
+.location-icon {
+  color: red; /* Red location icon */
+  margin-right: 5px;
+}
+
+/* Calendar icon styles */
+.calendar-icon {
+  margin-right: 5px;
+}
+
+/* Card image styles */
+.card-media {
+  width: 100%;
+  height: 200px;
+  object-fit: cover; /* Ensure images fit well */
+}
+
+/* Search icon styles */
+.search-icon {
+  color: black; /* Black search icon */
+}
+
+/* Media queries for responsiveness */
+@media (max-width: 600px) {
+  /* Adjust card layout for small screens */
+  .card {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
+  /* Adjust search bar width for small screens */
+  .search-bar {
+    width: 100%;
+  }
+}
+
+@media (min-width: 601px) and (max-width: 900px) {
+  /* Adjust card layout for medium screens */
+  .card {
+    width: 48%;
+    margin-bottom: 20px;
+  }
+
+  /* Adjust search bar width for medium screens */
+  .search-bar {
+    width: 70%;
+  }
+}
+
+@media (min-width: 901px) {
+  /* Adjust card layout for large screens */
+  .card {
+    width: 30%;
+    margin-bottom: 20px;
+  }
+
+  /* Adjust search bar width for large screens */
+  .search-bar {
+    width: 300px;
+  }
 }
