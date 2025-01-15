@@ -60,7 +60,7 @@ const Favourites = () => {
       <AppBar position="static" sx={{ background: 'rgba(0, 0, 0, 0.5)' }}>
         <Toolbar>
           <Typography variant="h6" component="div" sx={{ flexGrow: 1, display: 'flex', alignItems: 'center' }}>
-            <span role="img" aria-label="car" className="header-car-icon">🚗</span>
+            <span role="img" aria-label="love" className="header-love-icon">❤️</span>
             Favourites
           </Typography>
         </Toolbar>

@@ -15,8 +15,9 @@ import {
   IconButton,
   Menu,
   MenuItem,
+  CircularProgress, // Import CircularProgress for the loader
 } from '@mui/material';
-import { Link } from 'react-router-dom'; // Import Link for navigation
+import { Link, useNavigate } from 'react-router-dom'; // Import useNavigate for navigation
 import './Homepage.css'; // Import the CSS file
 
 const Homepage = () => {
@@ -46,6 +47,12 @@ const Homepage = () => {
   const [anchorEl, setAnchorEl] = useState(null);
   const open = Boolean(anchorEl);
 
+  // State for loader
+  const [isLoading, setIsLoading] = useState(false);
+
+  // Hook for navigation
+  const navigate = useNavigate();
+
   // Handle card click
   const handleCardClick = (index) => {
     setSelectedCard(index === selectedCard ? null : index); // Toggle selection
@@ -53,9 +60,17 @@ const Homepage = () => {
 
   // Handle search
   const handleSearch = () => {
-    const searchTerm = document.getElementById('search-field').value;
-    console.log('Searching for:', searchTerm);
-    // Add your search logic here
+    const searchTerm = document.getElementById('search-field').value.trim();
+    if (searchTerm) {
+      setIsLoading(true); // Show loader
+      console.log('Searching for:', searchTerm);
+
+      // Simulate a search delay (e.g., API call)
+      setTimeout(() => {
+        setIsLoading(false); // Hide loader
+        navigate('/weather', { state: { location: searchTerm } }); // Navigate to WeatherScreen
+      }, 2000); // 2-second delay for demonstration
+    }
   };
 
   // Handle hamburger menu click
@@ -156,8 +171,12 @@ const Homepage = () => {
             InputProps={{
               endAdornment: (
                 <InputAdornment position="end">
-                  <IconButton onClick={handleSearch}>
-                    <Typography variant="h6" className="search-icon">🔍</Typography>
+                  <IconButton onClick={handleSearch} disabled={isLoading}>
+                    {isLoading ? (
+                      <CircularProgress size={24} sx={{ color: 'black' }} /> // Show loader
+                    ) : (
+                      <Typography variant="h6" className="search-icon">🔍</Typography>
+                    )}
                   </IconButton>
                 </InputAdornment>
               ),
