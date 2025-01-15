@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 import React, { useState } from 'react';
 import {
   AppBar,
@@ -26,7 +25,6 @@ import './Homepage.css';
 
 // Load environment variables from home.env
 config({ path: path.resolve(__dirname, '../home.env') });
-=======
 import React, { useState, useEffect } from 'react';
 import { 
   AppBar, Toolbar, Typography, Container, Grid, Card,
@@ -39,37 +37,30 @@ import { FaMapMarkerAlt } from 'react-icons/fa';
 import { BsSearch, BsCalendarDate } from 'react-icons/bs';
 import { MdDirectionsCar } from 'react-icons/md';
 import axios from 'axios';
->>>>>>> 8ad143ef20d36e7939899ce2d760cc7c393bdde4
-
 const Homepage = () => {
   const recentLocations = [
     {
       name: 'Johannesburg',
       date: '2025 / 01 / 14',
       image: 'https://i.pinimg.com/736x/f0/bf/0c/f0bf0cbbd9865a91d3e2ea5e7cbfcff3.jpg',
-<<<<<<< HEAD
       lat: -26.2041, // Latitude for Johannesburg
       lon: 28.0473, // Longitude for Johannesburg
-=======
+
       description: 'Experience the vibrant culture and energy of South Africa\'s largest city'
->>>>>>> 8ad143ef20d36e7939899ce2d760cc7c393bdde4
     },
     {
       name: 'Cape Town',
       date: '2025 / 02 / 20',
       image: 'https://i.pinimg.com/736x/6e/28/4f/6e284fe96962fc6cff9d6fe14da79cc0.jpg',
-<<<<<<< HEAD
       lat: -33.9249, // Latitude for Cape Town
       lon: 18.4241, // Longitude for Cape Town
-=======
+
       description: 'Discover the stunning coastline and Table Mountain views'
->>>>>>> 8ad143ef20d36e7939899ce2d760cc7c393bdde4
     },
     {
       name: 'Durban',
       date: '2025 / 03 / 25',
       image: 'https://i.pinimg.com/736x/eb/28/2e/eb282e94d832b53dcb315ca842221f9c.jpg',
-<<<<<<< HEAD
       lat: -29.8587, // Latitude for Durban
       lon: 31.0218, // Longitude for Durban
     },
@@ -156,7 +147,6 @@ const Homepage = () => {
         margin: 0,
       }}
     >
-=======
       description: 'Enjoy the golden beaches and rich Indian influence'
     },
   ];
@@ -242,7 +232,6 @@ const Homepage = () => {
 
   return (
     <Box sx={{ minHeight: '100vh', display: 'flex', flexDirection: 'column' }}>
->>>>>>> 8ad143ef20d36e7939899ce2d760cc7c393bdde4
       <CssBaseline />
       <AppBar 
         position="fixed" 
@@ -253,7 +242,6 @@ const Homepage = () => {
         }}
       >
         <Toolbar>
-<<<<<<< HEAD
           <Typography variant="h6" component="div" sx={{ flexGrow: 1, display: 'flex', alignItems: 'center' }}>
             <span role="img" aria-label="car" className="header-car-icon">🚗</span>
             We’ve got you for your next vacation
@@ -269,7 +257,6 @@ const Homepage = () => {
               Favourites
             </MenuItem>
           </Menu>
-=======
           <Box sx={{ display: 'flex', alignItems: 'center', flexGrow: 1 }}>
             <Avatar sx={{ mr: 2, bgcolor: 'primary.main' }}>
               <MdDirectionsCar size={24} />
@@ -293,7 +280,6 @@ const Homepage = () => {
           >
             Favorites
           </Button>
->>>>>>> 8ad143ef20d36e7939899ce2d760cc7c393bdde4
         </Toolbar>
       </AppBar>
 
@@ -324,7 +310,6 @@ const Homepage = () => {
                 variant="outlined"
                 placeholder="Where would you like to go?"
                 sx={{
-<<<<<<< HEAD
                   background: selectedCard === index ? 'rgba(0, 191, 255, 0.5)' : 'rgba(0, 0, 0, 0.5)',
                   cursor: 'pointer',
                   transition: 'background 0.3s ease, transform 0.3s ease',
@@ -374,7 +359,7 @@ const Homepage = () => {
             }}
           />
         </Box>
-=======
+
                   width: '100%',
                   maxWidth: '500px',
                   backgroundColor: 'rgba(255, 255, 255, 0.9)',
@@ -461,7 +446,6 @@ const Homepage = () => {
             </Grid>
           </Box>
         </Container>
->>>>>>> 8ad143ef20d36e7939899ce2d760cc7c393bdde4
       </Box>
 
       <Box
