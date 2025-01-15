@@ -4,8 +4,8 @@ import Homepage from "./components/Homepage";
 import LoginScreen from "./components/pages/LoginScreen";
 import WeatherScreen from "./components/pages/WeatherScreen";
 import ActivitiesScreen from "./components/pages/ActivitiesScreen";
-import Destiny from "./components/Destiny";
-import Favourites from "./components/Favourites";
+import Destiny from "./components/Destiny"; // Import the Destiny component
+import Favourites from "./components/Favourites"; // Import the Favourites component
 
 const App = () => {
   return (
