@@ -27,7 +27,7 @@ const WeatherScreen = () => {
     windSpeed: "14 km/h",
     condition: "Sunny",
     days: ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"],
-    currentDay: 1, // Index of the current day (0 for Monday, etc.)
+    currentDay: 2, // Index of the current day (0 for Monday, etc.)
   };
 
   return (
@@ -51,7 +51,9 @@ const WeatherScreen = () => {
         sx={{
           background: "rgba(0, 0, 0, 0.5)",
           boxShadow: "none",
-          padding: "10px",
+          padding: "50px",
+         
+          
         }}
       >
         <Toolbar sx={{ justifyContent: "space-between" }}>
@@ -91,6 +93,9 @@ const WeatherScreen = () => {
           alignItems: "center",
           textAlign: "center",
           padding: "20px",
+          background: "rgba(0, 0, 0, 0.5)",
+          boxShadow: "none",
+          height: "60%"
         }}
       >
         <WbSunnyIcon sx={{ fontSize: "60px", color: "orange" }} />
